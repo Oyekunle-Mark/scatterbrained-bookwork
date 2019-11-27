@@ -1,2 +1,2 @@
-def binary_search(arr):
+def binary_search(arr, target, low, high):
     pass
