@@ -1,6 +1,7 @@
 def binary_search(arr, target, low, high):
     # find the mid of high and low
     mid = (low + high) // 2
+
     # if item at index is target return
     if arr[mid] == target:
         return True
