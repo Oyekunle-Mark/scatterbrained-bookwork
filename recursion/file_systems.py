@@ -2,7 +2,7 @@ import os
 
 
 def disk_usage(path):
-    total = os.path.getsize()
+    total = os.path.getsize(path)
 
     if os.path.isdir(path):
         for f in os.listdir(path):
@@ -12,3 +12,7 @@ def disk_usage(path):
     print("{0:<7}".format(total), path)
 
     return total
+
+
+curr_dir = os.getcwd()
+disk_usage(curr_dir)
