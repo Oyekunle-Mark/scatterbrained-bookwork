@@ -10,7 +10,6 @@ def disk_usage(path):
             total += disk_usage(full_path)
 
     print("{0:<7}".format(total), path)
-
     return total
 
 
