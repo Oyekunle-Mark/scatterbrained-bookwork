@@ -41,3 +41,12 @@ class ArrayQueue:
         self._size -= 1
 
         return ret
+
+    def enqueue(self, item):
+        """Add an element to the back of queue."""
+        if self._size == len(self._storage):
+            self._resize(len(self._storage) * 2)
+
+        pos = (self._front + self._size) % len(self._storage)
+        self._storage[pos] = item
+        self._size += 1
