@@ -50,3 +50,15 @@ class ArrayQueue:
         pos = (self._front + self._size) % len(self._storage)
         self._storage[pos] = item
         self._size += 1
+
+    def _resize(self, cap):
+        """Resize to a new list of capacity >= len(self)."""
+        old = self._storage
+        self._storage = [None] * cap
+        pos = self._front
+
+        for i in range(self._size):
+            self._storage[i] = old[pos]
+            pos = (pos + 1) % len(old)
+
+        self._front = 0
