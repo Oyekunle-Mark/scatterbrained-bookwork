@@ -10,5 +10,11 @@ class ArrayQueue:
     def __init__(self):
         """Create an empty queue"""
         self._storage = [None] * self._CAPACITY
-        self.size = 0
-        self.front = 0
+        self._size = 0
+        self._front = 0
+
+    def __len__(self):
+        """Return the number of elements in the queue."""
+        return self._size
+
+    
