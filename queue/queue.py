@@ -28,3 +28,16 @@ class ArrayQueue:
             raise Empty("Queue is empty")
 
         return self._storage[self._front]
+
+    def dequeue(self):
+        """Remove and return the first element of the queue (i.e., FIFO).
+        Raise Empty exception if the queue is empty."""
+        if self.is_empty():
+            raise Empty("Queue is empty")
+
+        ret = self._storage[self._front]
+        self._storage[self._front] = None
+        self._front = (self._front + 1) % len(self._storage)
+        self._size -= 1
+
+        return ret
