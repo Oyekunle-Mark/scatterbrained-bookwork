@@ -20,3 +20,11 @@ class ArrayQueue:
     def is_empty(self):
         """Return True if the queue is empty"""
         return self._size == 0
+
+    def first(self):
+        """Return (but do not remove) the element at the front of the queue.
+        Raise Empty exception if the queue is empty."""
+        if self.is_empty():
+            raise Empty("Queue is empty")
+
+        return self._storage[self._front]
