@@ -34,6 +34,8 @@ class ArrayQueue:
         Raise Empty exception if the queue is empty."""
         if self.is_empty():
             raise Empty("Queue is empty")
+        elif 0 < self._size < len(self._storage) // 4:
+            self._resize(len(self._storage) // 2)
 
         ret = self._storage[self._front]
         self._storage[self._front] = None
@@ -62,6 +64,7 @@ class ArrayQueue:
             pos = (pos + 1) % len(old)
 
         self._front = 0
+
 
 d = ArrayQueue()
 d.enqueue(1)
