@@ -17,4 +17,6 @@ class ArrayQueue:
         """Return the number of elements in the queue."""
         return self._size
 
-    
+    def is_empty(self):
+        """Return True if the queue is empty"""
+        return self._size == 0
