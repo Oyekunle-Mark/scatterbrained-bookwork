@@ -62,3 +62,17 @@ class ArrayQueue:
             pos = (pos + 1) % len(old)
 
         self._front = 0
+
+d = ArrayQueue()
+d.enqueue(1)
+d.enqueue(2)
+print(d.__len__())
+d.enqueue(3)
+print(d.is_empty())
+print(d.first())
+d.dequeue()
+print(d.__len__())
+d.dequeue()
+d.dequeue()
+print(d.__len__())
+d.dequeue()
